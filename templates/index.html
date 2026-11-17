@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fraud Detection System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>SecurePay</h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <a class="active">Dashboard</a>
+        <a>Transactions</a>
+        <a>Fraud Detection</a>
+        <a>Reports</a>
+
+        <div class="sidebar-bottom">
+            AI Powered Security
+        </div>
+
+    </div>
+
+
+    <div class="main">
+
+        <header>
+            <div>
+                <h1>Fraud Detection Dashboard</h1>
+                <p>Monitor and analyze suspicious transactions.</p>
+            </div>
+
+            <span class="status">● System Online</span>
+        </header>
+
+
+        <section class="cards">
+            <div class="card">
+                <p>Total Transactions</p>
+                <h2 id="total">0</h2>
+            </div>
+            
+            <div class="card">
+                <p>Fraudulent Transactions</p>
+                <h2 id="fraud">0</h2>
+            </div>
+            
+            <div class="card">
+                <p>Legitimate Transactions</p>
+                <h2 id="legitimate">0</h2>
+            </div>
+        </section>
+
+
+        <section class="transaction">
+
+            <h2>Analyze Transaction</h2>
+
+            <p>Enter transaction details for fraud prediction.</p>
+
+            <form id="fraudForm">
+
+                <label>Transaction Time</label>
+                <input type="number" id="Time" value="0" step="any" required>
+
+                <label>Transaction Amount</label>
+                <input type="number" id="Amount" value="100" min="0" step="any" required>
+
+                <h3>Advanced Model Features</h3>
+
+                <p>Enter V1–V28 values. For a demonstration, the default values are zero.</p>
+
+                <div id="features" class="feature-grid"></div>
+
+                <button type="submit">
+                    Analyze Transaction
+                </button>
+
+            </form>
+
+            <div id="result" class="result">
+                Prediction will appear here.
+            </div>
+
+        </section>
+
+        <section class="transaction">
+            <h2>Recent Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Amount</th>
+                        <th>Result</th>
+                        <th>Fraud Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
